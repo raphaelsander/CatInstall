@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "### INSTALAÇÃO NUMIX ICON THEME CIRCLE ###"
+echo " "
+sudo add-apt-repository ppa:numix/ppa
+sudo apt-get update
+sudo apt-get install numix-icon-theme-circle -y
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read

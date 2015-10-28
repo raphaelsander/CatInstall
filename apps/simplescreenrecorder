@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "### INSTALAÇÃO SIMPLE SCREEN RECORDER ###"
+echo " "
+sudo add-apt-repository ppa:maarten-baert/simplescreenrecorder
+sudo apt-get update
+sudo apt-get install simplescreenrecorder simplescreenrecorder-lib:i386 -y
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read

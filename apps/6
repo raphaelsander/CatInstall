@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "### INSTALAÇÃO SKYPE ###"
+echo " "
+sudo wget http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
+sudo dpkg -i skype-ubuntu-precise_4.3.0.37-1_i386.deb
+sudo rm skype-ubuntu-precise_4.3.0.37-1_i386.deb
+sudo apt-get -f install
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read
