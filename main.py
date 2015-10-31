@@ -1,43 +1,69 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 # coding=UTF-8
 
 ## By Raphael Sander
 ## <raphael.sander75@gmail.com>
 
+import gtk
 import os
-from gi.repository import Gtk, GObject
+import sqlite3
 
-#os.system("mkdir ~/.cacheappinstall/")
+from about import about
 
-class main(Gtk.Window):
+os.system("mkdir ~/.cacheappinstall/")
+
+class AppInstall:
     def __init__(self):
 
-        #self.img = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-        #self.var = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        # Estrutura da janela principal
+        self.window = gtk.Window()
+        self.window.set_title('AppInstall 0.1 (Beta)')
+        self.window.set_border_width(15)
 
-        #frame = Frame(master)
-        #frame.grid()
-        #for x in range(0, 12):
-            #self.var[x] = IntVar()
+        # Caixa vertical
+        self.VBox = gtk.VBox()
 
-        #Button(relief=FLAT, command=self.bash, text="Instalar").grid(column=1, row=6)
-        #Button(relief=FLAT, command=self.bash, text="About").grid(column=3, row=6)
+        # Caixa horizontal de pesquisa
+        self.searchbox = gtk.HBox()
 
-        #for x in range(0, 12):
-            #self.img[x] = ImageTk.PhotoImage(Image.open(u"/opt/AppInstall/images/noinstalled/%s.png" % x))
-            #if x < 6:
-                #Label(image=self.img[x]).grid(column=1, row=x)
-                #Checkbutton(master, variable=self.var[x]).grid(column=0, row=x)
-            #else:
-                #Label(image=self.img[x]).grid(column=3, row=x - 6)
-                #Checkbutton(master, variable=self.var[x]).grid(column=2, row=x - 6)
+        # Criando itens e adicionando ao box de pesquisa
+        self.search_label = gtk.Label("Pesquisar:  ")
+        self.searchbox.pack_start(self.search_label, False, False, 0)
 
-    #def bash(self):
-        #for x in range(0, 12):
-            #if self.var[x].get() == 1:
-                #os.system("gnome-terminal -x bash -c /opt/AppInstall/apps/%s && exit; exec bash" % x)
+        self.search = gtk.Entry()
+        self.searchbox.pack_start(self.search, expand=True, fill=True)
 
-win = main
-win.connect("delete-event", Gtk.main_quit)
-win.show_all()
-Gtk.main()
+        # Box inferior
+        self.footh = gtk.HBox()
+
+        # Criando botões de instalação e about
+        self.install = gtk.Button("Instalar")
+        self.install.connect('clicked', self.cmd_install)
+        self.footh.pack_start(self.install, expand=False, fill=True)
+
+        self.bot_about = gtk.Button("About")
+        self.bot_about.connect('clicked', self.cmd_about)
+        self.footh.pack_start(self.bot_about, expand=False, fill=True)
+
+        # Adicionando boxs horizontais ao box vertical
+        self.VBox.pack_start(self.searchbox, expand=False, fill=True)
+        self.VBox.pack_start(self.footh, expand=False, fill=True)
+
+        # Adicionando box vertical na janela e exibindo
+        self.window.add(self.VBox)
+
+    def cmd_about(self, *args):
+        about()
+
+    def show(self):
+        self.window.show_all()
+
+    def cmd_install(self, *args):
+        print "Em desenvolvimento"
+        #os.system("gnome-terminal -x bash -c /opt/AppInstall/apps/%s && exit; exec bash" % x)
+
+app = AppInstall()
+
+if __name__ == "__main__":
+    app.show()
+    gtk.main()
