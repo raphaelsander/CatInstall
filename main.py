@@ -11,7 +11,6 @@ import os.path
 
 os.system("mkdir ~/.cacheappinstall/")
 
-
 class App:
     def __init__(self, master):
 
