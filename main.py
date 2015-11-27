@@ -15,11 +15,22 @@ os.system("mkdir ~/.cacheappinstall/")
 
 
 class AppInstall:
+
+    def destroy(self, widget):
+        gtk.main_quit()
+
+    def aboutdialog(self, widget):
+        self.builder = gtk.Builder()
+        self.builder.add_from_file("mainwindow.glade")
+        self.builder.connect_signals('on_mainwindow_destroy', self.destroy)
+        self.windowabout = self.builder.get_object("aboutdialog")
+        self.windowabout.show()
+
     def __init__(self):
         # Estrutura da janela principal
         self.builder = gtk.Builder()
         self.builder.add_from_file("mainwindow.glade")
-        self.builder.connect_signals({"on_mainwindow_destroy": gtk.main_quit, \
+        self.builder.connect_signals({"on_mainwindow_destroy": self.destroy, \
                                       "on_janitor_button_toggled": gtk.main_quit, \
                                       "on_admins_button_toggled": gtk.main_quit, \
                                       "on_admins_button_clicked": gtk.main_quit, \
@@ -28,16 +39,11 @@ class AppInstall:
                                       "on_apps_button_toggled": gtk.main_quit, \
                                       "on_overview_button_toggled": gtk.main_quit, \
                                       "on_preference_button_clicked": gtk.main_quit, \
-                                      "on_about_button_clicked": gtk.main_quit})
+                                      "on_about_button_clicked": self.aboutdialog})
         self.window = self.builder.get_object("mainwindow")
         self.window.show()
 
 
-def main():
-    gtk.main()
-    return 0
-
-
 if __name__ == "__main__":
     AppInstall()
-    main()
+    gtk.main()
