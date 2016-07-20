@@ -1,0 +1,5 @@
+[Dependencias]
+&bull; python-imaging
+&bull; python-pil
+&bull; python-tk
+&bull; python-imaging-tk
