@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 # coding=UTF-8
 
-## By Raphael Sander
-## <raphael.sander75@gmail.com>
+# By Raphael Sander
+# <raphael.sander75@gmail.com>
 
 from Tkinter import *
 from PIL import ImageTk, Image
