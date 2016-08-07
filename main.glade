@@ -10,11 +10,14 @@
     <property name="type_hint">menu</property>
     <property name="program_name">AppInstall</property>
     <property name="version">1.0 Beta</property>
-    <property name="copyright" translatable="yes">BlackCat</property>
+    <property name="copyright" translatable="yes">Copyright © 2016
+BlackCat Development Team</property>
     <property name="website">http://blackcat8080.xyz/projetos/appinstall</property>
+    <property name="license" translatable="yes">Open Source Project</property>
     <property name="authors">Raphael Sander
 Cainã D'Ajuda</property>
     <property name="logo_icon_name">system-software-update</property>
+    <property name="license_type">custom</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="aboutdialog-vbox1">
         <property name="can_focus">False</property>
@@ -40,12 +43,11 @@ Cainã D'Ajuda</property>
   </object>
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
-    <property name="type">popup</property>
     <property name="title" translatable="yes">AppInstall 1.0 Beta</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="destroy_with_parent">True</property>
-    <property name="decorated">False</property>
+    <property name="icon_name">preferences-desktop</property>
     <property name="gravity">center</property>
     <child>
       <object class="GtkBox" id="box1">
@@ -226,6 +228,7 @@ Cainã D'Ajuda</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
+                <signal name="clicked" handler="about_clicked_cb" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -233,7 +236,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button11">
+              <object class="GtkButton" id="config">
                 <property name="label">gtk-preferences</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>

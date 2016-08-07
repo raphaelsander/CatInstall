@@ -8,7 +8,7 @@ import os
 import os.path
 import gi
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 
 if os.path.exists(os.getcwd() + "/.cacheappinstall/") == True:
     pass
@@ -23,7 +23,7 @@ class App(Gtk.Window):
         window.set_title("AppInstall 1.0 Beta")
 
         builder.connect_signals({
-            "about": self.sobre()
+            "about_clicked_cb": self.sobre()
         })
 
         window.show()
