@@ -13,7 +13,7 @@ from gi.repository import Gtk
 if os.path.exists(os.getcwd() + "/.cacheappinstall/") == True:
     pass
 else:
-    os.system("mkdir %s/.cacheappinstall/" os.getcwd())
+    os.mkdir(os.getcwd() + "/.cacheappinstall/")
 
 class App(Gtk.Window):
     def __init__(self):
