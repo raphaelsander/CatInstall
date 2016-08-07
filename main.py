@@ -18,7 +18,7 @@ else:
 class App(Gtk.Window):
     def __init__(self):
         builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd() + "/AppInstall/main.glade")
+        builder.add_from_file(os.getcwd() + "/main.glade")
         window = builder.get_object("window1")
         window.set_title("AppInstall 1.0 Beta")
 
@@ -31,7 +31,7 @@ class App(Gtk.Window):
 
     def sobre(self):
         builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd() + "/AppInstall/main.glade")
+        builder.add_from_file(os.getcwd() + "/main.glade")
         window = builder.get_object("aboutdialog1")
         window.set_title("Sobre")
 

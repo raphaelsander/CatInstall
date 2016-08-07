@@ -1,0 +1,6 @@
+#!/bin/bash
+## Rambox
+cd ~/.cacheappinstall/ && get https://getrambox.herokuapp.com/download/linux_64
+cd opt/ && unzip Rambox-linux-x64.zip
+cd Rambox-linux-x64
+chmod +x Rambox
