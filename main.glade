@@ -2,18 +2,22 @@
 <!-- Generated with glade 3.18.3 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
+  <!-- interface-license-type all_permissive -->
   <object class="GtkAboutDialog" id="aboutdialog1">
     <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Sobre</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="destroy_with_parent">True</property>
-    <property name="type_hint">menu</property>
+    <property name="type_hint">normal</property>
+    <property name="urgency_hint">True</property>
     <property name="program_name">AppInstall</property>
     <property name="version">1.0 Beta</property>
     <property name="copyright" translatable="yes">Copyright © 2016
 BlackCat Development Team</property>
     <property name="website">http://blackcat8080.xyz/projetos/appinstall</property>
-    <property name="license" translatable="yes">Open Source Project</property>
+    <property name="license" translatable="yes">Open Source</property>
     <property name="authors">Raphael Sander
 Cainã D'Ajuda</property>
     <property name="logo_icon_name">system-software-update</property>
@@ -49,6 +53,7 @@ Cainã D'Ajuda</property>
     <property name="destroy_with_parent">True</property>
     <property name="icon_name">preferences-desktop</property>
     <property name="gravity">center</property>
+    <signal name="destroy" handler="on_window1_destroy" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -192,6 +197,7 @@ Cainã D'Ajuda</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <signal name="activate" handler="on_about_activate" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -228,7 +234,7 @@ Cainã D'Ajuda</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
-                <signal name="clicked" handler="about_clicked_cb" swapped="no"/>
+                <signal name="activate" handler="on_about_activate" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>

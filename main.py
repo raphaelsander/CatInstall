@@ -16,24 +16,22 @@ else:
     os.mkdir(os.getcwd() + "/.cacheappinstall/")
 
 class App(Gtk.Window):
+    def on_about_activate(self, data=None):
+        print "Exibindo Sobre"
+        self.response = self.aboutdialog.run()
+        self.aboutdialog.hide()
+
+    def on_window1_destroy(self, object, data=None):
+        print "Fechando"
+        Gtk.main_quit()
+
     def __init__(self):
-        builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd() + "/main.glade")
-        window = builder.get_object("window1")
-        window.set_title("AppInstall 1.0 Beta")
-
-        builder.connect_signals({
-            "about_clicked_cb": self.sobre()
-        })
-
-        window.show()
-        window.connect("delete-event", Gtk.main_quit)
-
-    def sobre(self):
-        builder = Gtk.Builder()
-        builder.add_from_file(os.getcwd() + "/main.glade")
-        window = builder.get_object("aboutdialog1")
-        window.set_title("Sobre")
+        self.builder = Gtk.Builder()
+        self.builder.add_from_file(os.getcwd() + "/main.glade")
+        self.builder.connect_signals(self)
+        self.window = self.builder.get_object("window1")
+        self.aboutdialog = self.builder.get_object("aboutdialog1")
+        self.window.show()
 
     #     self.aboutw = None
     #     self.img = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
