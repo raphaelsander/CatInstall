@@ -145,8 +145,8 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="everpad_btn">
-                <property name="label" translatable="yes">Everpad</property>
+              <object class="GtkButton" id="numix_btn">
+                <property name="label" translatable="yes">Numix</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -158,8 +158,8 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="numix_btn">
-                <property name="label" translatable="yes">Numix</property>
+              <object class="GtkButton" id="popcorn_btn">
+                <property name="label" translatable="yes">Popcorn Time</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -167,18 +167,6 @@ Cainã D'Ajuda</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">1</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="popcorn_btn">
-                <property name="label" translatable="yes">Popcorn Time</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
                 <property name="top_attach">1</property>
               </packing>
             </child>
@@ -188,10 +176,9 @@ Cainã D'Ajuda</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="margin_right">15</property>
               </object>
               <packing>
-                <property name="left_attach">2</property>
+                <property name="left_attach">1</property>
                 <property name="top_attach">1</property>
               </packing>
             </child>
@@ -201,12 +188,12 @@ Cainã D'Ajuda</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="margin_left">15</property>
+                <property name="margin_right">15</property>
                 <signal name="activate" handler="on_about_activate" swapped="no"/>
               </object>
               <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">2</property>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
               </packing>
             </child>
             <child>
@@ -215,9 +202,10 @@ Cainã D'Ajuda</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="margin_left">15</property>
               </object>
               <packing>
-                <property name="left_attach">1</property>
+                <property name="left_attach">0</property>
                 <property name="top_attach">2</property>
               </packing>
             </child>
@@ -227,6 +215,18 @@ Cainã D'Ajuda</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="subterfuge_btn">
+                <property name="label" translatable="yes">Subterfuge</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
                 <property name="margin_right">15</property>
               </object>
               <packing>
@@ -235,8 +235,8 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="subterfuge_btn">
-                <property name="label" translatable="yes">Subterfuge</property>
+              <object class="GtkButton" id="telegram_btn">
+                <property name="label" translatable="yes">Telegram</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -248,8 +248,8 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="telegram_btn">
-                <property name="label" translatable="yes">Telegram</property>
+              <object class="GtkButton" id="ubuntu_tweak_btn">
+                <property name="label" translatable="yes">Ubuntu Tweak</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -260,17 +260,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="ubuntu_tweak_btn">
-                <property name="label" translatable="yes">Ubuntu Tweak</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="margin_right">15</property>
-              </object>
-              <packing>
-                <property name="left_attach">2</property>
-                <property name="top_attach">3</property>
-              </packing>
+              <placeholder/>
             </child>
           </object>
           <packing>
