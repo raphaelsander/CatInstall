@@ -9,7 +9,7 @@ class _UiProxy(object):
 
     def __init__(self):
         self._builder = Gtk.Builder()
-        gladefile = os.getcwd() + "/main.glade"
+        gladefile = os.getcwd() + "/data/glade/main.glade"
         self._builder.add_from_file(gladefile)
         self.about_window = self._builder.get_object("about_window")
 
