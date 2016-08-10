@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.18.3 -->
+<!-- Generated with glade 3.20.0 -->
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <!-- interface-license-type all_permissive -->
-  <object class="GtkAboutDialog" id="aboutdialog1">
+  <object class="GtkAboutDialog" id="about_window">
     <property name="can_focus">False</property>
     <property name="type">popup</property>
-    <property name="title" translatable="yes">Sobre</property>
+    <property name="title" translatable="yes">About</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="destroy_with_parent">True</property>
     <property name="type_hint">normal</property>
     <property name="urgency_hint">True</property>
-    <property name="program_name">AppInstall</property>
-    <property name="version">1.0 Beta</property>
+    <property name="program_name">CatInstall</property>
+    <property name="version">0.1 Beta</property>
     <property name="copyright" translatable="yes">Copyright © 2016
 BlackCat Development Team</property>
     <property name="website">http://blackcat8080.xyz/projetos/appinstall</property>
@@ -45,9 +45,9 @@ Cainã D'Ajuda</property>
       </object>
     </child>
   </object>
-  <object class="GtkWindow" id="window1">
+  <object class="GtkWindow" id="main_window">
     <property name="can_focus">False</property>
-    <property name="title" translatable="yes">AppInstall 1.0 Beta</property>
+    <property name="title" translatable="yes">CatInstall 0.1 Beta</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="destroy_with_parent">True</property>
@@ -120,11 +120,12 @@ Cainã D'Ajuda</property>
             <property name="row_homogeneous">True</property>
             <property name="column_homogeneous">True</property>
             <child>
-              <object class="GtkButton" id="apps">
-                <property name="label" translatable="yes">Aplicativos</property>
+              <object class="GtkButton" id="studio_btn">
+                <property name="label" translatable="yes">Android Studio</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="margin_left">15</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -132,8 +133,8 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="themes">
-                <property name="label" translatable="yes">Temas</property>
+              <object class="GtkButton" id="chrome_btn">
+                <property name="label" translatable="yes">Chrome</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -144,11 +145,12 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="icons">
-                <property name="label" translatable="yes">Ícones</property>
+              <object class="GtkButton" id="everpad_btn">
+                <property name="label" translatable="yes">Everpad</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="margin_right">15</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -156,11 +158,12 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="fonts">
-                <property name="label" translatable="yes">Fontes</property>
+              <object class="GtkButton" id="numix_btn">
+                <property name="label" translatable="yes">Numix</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="margin_left">15</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -168,8 +171,8 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="cursor">
-                <property name="label" translatable="yes">Cursor</property>
+              <object class="GtkButton" id="popcorn_btn">
+                <property name="label" translatable="yes">Popcorn Time</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -180,11 +183,12 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="conky">
-                <property name="label" translatable="yes">Conky</property>
+              <object class="GtkButton" id="recorder_btn">
+                <property name="label" translatable="yes">SS Recorder</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="margin_right">15</property>
               </object>
               <packing>
                 <property name="left_attach">2</property>
@@ -192,11 +196,12 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="other">
-                <property name="label" translatable="yes">Outros</property>
+              <object class="GtkButton" id="skype_btn">
+                <property name="label" translatable="yes">Skype</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <property name="margin_left">15</property>
                 <signal name="activate" handler="on_about_activate" swapped="no"/>
               </object>
               <packing>
@@ -205,10 +210,67 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="spotify_btn">
+                <property name="label" translatable="yes">Spotify</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">2</property>
+              </packing>
             </child>
             <child>
-              <placeholder/>
+              <object class="GtkButton" id="steam_btn">
+                <property name="label" translatable="yes">Steam</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">15</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="subterfuge_btn">
+                <property name="label" translatable="yes">Subterfuge</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_left">15</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="telegram_btn">
+                <property name="label" translatable="yes">Telegram</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">3</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="ubuntu_tweak_btn">
+                <property name="label" translatable="yes">Ubuntu Tweak</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="margin_right">15</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">3</property>
+              </packing>
             </child>
           </object>
           <packing>
@@ -228,33 +290,20 @@ Cainã D'Ajuda</property>
             <property name="column_spacing">150</property>
             <property name="column_homogeneous">True</property>
             <child>
-              <object class="GtkButton" id="about">
-                <property name="label">gtk-about</property>
+              <object class="GtkButton" id="about_btn">
+                <property name="label" translatable="yes">About</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_stock">True</property>
-                <signal name="activate" handler="on_about_activate" swapped="no"/>
-              </object>
-              <packing>
-                <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="config">
-                <property name="label">gtk-preferences</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="receives_default">True</property>
-                <property name="has_tooltip">True</property>
-                <property name="use_stock">True</property>
-                <property name="always_show_image">True</property>
+                <property name="margin_right">15</property>
               </object>
               <packing>
                 <property name="left_attach">1</property>
                 <property name="top_attach">0</property>
               </packing>
+            </child>
+            <child>
+              <placeholder/>
             </child>
           </object>
           <packing>
