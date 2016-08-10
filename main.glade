@@ -234,7 +234,8 @@ Cainã D'Ajuda</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
-                <signal name="activate" handler="on_about_activate" swapped="no"/>
+                <property name="always_show_image">True</property>
+                <signal name="clicked" handler="on_about_activate" object="aboutdialog1" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
