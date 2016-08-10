@@ -1,80 +1,130 @@
-#!/usr/bin/python3
-# coding=UTF-8
-
-# By Raphael Sander
-# <raphael.sander75@gmail.com>
-
 import os
-import os.path
+
 import gi
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
 
-if os.path.exists(os.getcwd() + "/.cacheappinstall/") == True:
-    pass
-else:
-    os.mkdir(os.getcwd() + "/.cacheappinstall/")
 
-class App(Gtk.Window):
-    def on_about_activate(self, data=None):
-        print "Exibindo Sobre"
-        self.response = self.aboutdialog.run()
-        self.aboutdialog.hide()
-
-    def on_window1_destroy(self, object, data=None):
-        print "Fechando"
-        Gtk.main_quit()
+class _UiProxy(object):
 
     def __init__(self):
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file(os.getcwd() + "/main.glade")
-        self.builder.connect_signals(self)
-        self.window = self.builder.get_object("window1")
-        self.aboutdialog = self.builder.get_object("aboutdialog1")
-        self.window.show()
+        self._builder = Gtk.Builder()
+        gladefile = os.getcwd() + "/main.glade"
+        self._builder.add_from_file(gladefile)
+        self.about_window = self._builder.get_object("about_window")
 
-    #     self.aboutw = None
-    #     self.img = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    #     self.var = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    #
-    #     frame = Frame(master)
-    #     frame.grid()
-    #     for x in range(0, 12):
-    #         self.var[x] = IntVar()
-    #
-    #     Button(relief=FLAT, command=self.bash, text="Instalar").grid(column=1, row=6)
-    #     Button(relief=FLAT, command=self.about, text="About").grid(column=3, row=6)
-    #
-    #     for x in range(0, 12):
-    #         self.img[x] = ImageTk.PhotoImage(Image.open(u"%s/images/noinstalled/%s.png" % (p, x)))
-    #         if x < 6:
-    #             Label(image=self.img[x]).grid(column=1, row=x)
-    #             Checkbutton(master, variable=self.var[x]).grid(column=0, row=x)
-    #         else:
-    #             Label(image=self.img[x]).grid(column=3, row=x - 6)
-    #             Checkbutton(master, variable=self.var[x]).grid(column=2, row=x - 6)
-    #
-    # def bash(self):
-    #     for x in range(0, 12):
-    #         if self.var[x].get() == 1:
-    #             os.system("gnome-terminal -x bash -c %s/apps/%s && exit; exec bash" % (p, x))
-    #
-    # def about(self):
-    #     if self.aboutw is None:
-    #         self.aboutw = Tk()
-    #         self.aboutw.title('Sobre')
-    #         self.aboutw.geometry('500x360+100+250')
-    #         self.aboutw.maxsize(500, 360)
-    #         self.aboutw.protocol("WM_DELETE_WINDOW", self.close_about)
-    #         self.icon = ImageTk.PhotoImage(Image.open(u"%s/icon.png" % p))
-    #
-    #     else:
-    #         self.aboutw.lift()
-    #
-    # def close_about(self):
-    #     self.aboutw.destroy()
-    #     self.aboutw = None
+    def __getattr__(self, attr):
+        return self._builder.get_object(attr)
 
-if __name__ == '__main__':
-    app = App()
-    Gtk.main()
+
+class CatApp(object):
+
+    def __init__(self):
+        self._ui = _UiProxy()
+        self._setup()
+
+    #
+    #  Public
+    #
+
+    #
+    #  Private
+    #
+
+    def _install_app(self, app):
+        scripts_path = os.getcwd() + "/apps/"
+        os.system("gnome-terminal -x bash -c %s%s && exit; exec bash" %
+                  (scripts_path, app))
+
+    def _setup(self):
+        # Main window
+        main_window = self._ui.main_window
+        main_window.connect("destroy", Gtk.main_quit)
+
+        self._ui.chrome_btn.connect('clicked', self._on_chrome_btn__clicked)
+        self._ui.everpad_btn.connect('clicked', self._on_everpad_btn__clicked)
+        self._ui.numix_btn.connect('clicked', self._on_numix_btn__clicked)
+        self._ui.popcorn_btn.connect('clicked', self._on_popcorn_btn__clicked)
+        self._ui.recorder_btn.connect('clicked', self._on_recorder_btn__clicked)
+        self._ui.skype_btn.connect('clicked', self._on_skype_btn__clicked)
+        self._ui.spotify_btn.connect('clicked', self._on_spotify_btn__clicked)
+        self._ui.steam_btn.connect('clicked', self._on_steam_btn__clicked)
+        self._ui.studio_btn.connect('clicked', self._on_studio_btn__clicked)
+        self._ui.subterfuge_btn.connect('clicked', self._on_subterfuge_btn__clicked)
+        self._ui.telegram_btn.connect('clicked', self._on_telegram_btn__clicked)
+        self._ui.ubuntu_tweak_btn.connect('clicked', self._on_ubuntu_tweak_btn__clicked)
+
+        main_window.show_all()
+
+        # About window
+        about_window = self._ui.about_window
+        self._ui.about_btn.connect('clicked', self._on_about_btn__clicked)
+
+    def _show_about(self):
+        self._ui.about_window.show_all()
+
+    #
+    #   Callbacks
+    #
+
+    # Aqui deve-se colocar os callbacks de todos os botoes que irao ocorrer a
+    # instalacao
+
+    def _on_about_btn__clicked(self, button):
+        print "about"
+
+    def _on_chrome_btn__clicked(self, button):
+        print "chrome"
+        self._install_app('chrome')
+
+    def _on_everpad_btn__clicked(self, button):
+        print "everpad"
+        self._install_app('everpad')
+
+    def _on_numix_btn__clicked(self, button):
+        print "numix"
+        self._install_app('numix')
+
+    def _on_popcorn_btn__clicked(self, button):
+        print "popcorn"
+        self._install_app('popcorn')
+
+    def _on_recorder_btn__clicked(self, button):
+        print "recorder"
+        self._install_app('recorder')
+
+    def _on_skype_btn__clicked(self, button):
+        print "skype"
+        self._install_app('skype')
+
+    def _on_spotify_btn__clicked(self, button):
+        print "spotify"
+        self._install_app('spotify')
+
+    def _on_steam_btn__clicked(self, button):
+        print "steam"
+        self._install_app('steam')
+
+    def _on_studio_btn__clicked(self, button):
+        print "studio"
+        self._install_app('android_studio')
+
+    def _on_subterfuge_btn__clicked(self, button):
+        print "subterfuge"
+        self._install_app('subterfuge')
+
+    def _on_telegram_btn__clicked(self, button):
+        print "telegram"
+        self._install_app('telegram')
+
+    def _on_ubuntu_tweak_btn__clicked(self, button):
+        print "tweak"
+        self._install_app('ubuntu_tweak')
+
+
+if __name__=='__main__':
+    try:
+        app = CatApp()
+        Gtk.main()
+    except KeyboardInterrupt:
+        Gtk.main_quit
