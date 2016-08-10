@@ -3,48 +3,6 @@
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <!-- interface-license-type all_permissive -->
-  <object class="GtkAboutDialog" id="aboutdialog1">
-    <property name="can_focus">False</property>
-    <property name="type">popup</property>
-    <property name="title" translatable="yes">Sobre</property>
-    <property name="resizable">False</property>
-    <property name="window_position">center</property>
-    <property name="destroy_with_parent">True</property>
-    <property name="type_hint">normal</property>
-    <property name="urgency_hint">True</property>
-    <property name="program_name">AppInstall</property>
-    <property name="version">1.0 Beta</property>
-    <property name="copyright" translatable="yes">Copyright © 2016
-BlackCat Development Team</property>
-    <property name="website">http://blackcat8080.xyz/projetos/appinstall</property>
-    <property name="license" translatable="yes">Open Source</property>
-    <property name="authors">Raphael Sander
-Cainã D'Ajuda</property>
-    <property name="logo_icon_name">system-software-update</property>
-    <property name="license_type">custom</property>
-    <child internal-child="vbox">
-      <object class="GtkBox" id="aboutdialog-vbox1">
-        <property name="can_focus">False</property>
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="aboutdialog-action_area1">
-            <property name="can_focus">False</property>
-            <property name="margin_top">6</property>
-            <property name="layout_style">end</property>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">False</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
-          <placeholder/>
-        </child>
-      </object>
-    </child>
-  </object>
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">AppInstall 1.0 Beta</property>
@@ -263,6 +221,49 @@ Cainã D'Ajuda</property>
             <property name="fill">True</property>
             <property name="position">2</property>
           </packing>
+        </child>
+      </object>
+    </child>
+  </object>
+  <object class="GtkAboutDialog" id="aboutdialog1">
+    <property name="can_focus">False</property>
+    <property name="type">popup</property>
+    <property name="title" translatable="yes">Sobre</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="type_hint">normal</property>
+    <property name="urgency_hint">True</property>
+    <property name="transient_for">window1</property>
+    <property name="program_name">AppInstall</property>
+    <property name="version">1.0 Beta</property>
+    <property name="copyright" translatable="yes">Copyright © 2016
+BlackCat Development Team</property>
+    <property name="website">http://blackcat8080.xyz/projetos/appinstall</property>
+    <property name="license" translatable="yes">Open Source</property>
+    <property name="authors">Raphael Sander
+Cainã D'Ajuda</property>
+    <property name="logo_icon_name">system-software-update</property>
+    <property name="license_type">custom</property>
+    <child internal-child="vbox">
+      <object class="GtkBox" id="aboutdialog-vbox1">
+        <property name="can_focus">False</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkButtonBox" id="aboutdialog-action_area1">
+            <property name="can_focus">False</property>
+            <property name="margin_top">6</property>
+            <property name="layout_style">end</property>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
         </child>
       </object>
     </child>
