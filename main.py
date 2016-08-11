@@ -7,7 +7,7 @@ import os
 import os.path
 import gi
 gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk
+from gi.repository import Gtk
 
 if os.path.exists(os.getcwd() + "/.cacheappinstall/") == True:
     pass
