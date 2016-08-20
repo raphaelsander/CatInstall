@@ -37,25 +37,10 @@
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="opacity">0.95999999999999996</property>
-                <property name="stock">gtk-missing-image</property>
+                <property name="pixbuf">logo.png</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="label1">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="opacity">0.98999999999999999</property>
-                <property name="valign">end</property>
-                <property name="label" translatable="yes">AppInstall</property>
-                <property name="ellipsize">end</property>
-                <property name="angle">0.029999999999999999</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -235,7 +220,7 @@
     <property name="type_hint">normal</property>
     <property name="urgency_hint">True</property>
     <property name="transient_for">window1</property>
-    <property name="program_name">AppInstall</property>
+    <property name="program_name">CatInstall</property>
     <property name="version">1.0 Beta</property>
     <property name="copyright" translatable="yes">Copyright © 2016
 BlackCat Development Team</property>
@@ -243,7 +228,7 @@ BlackCat Development Team</property>
     <property name="license" translatable="yes">Open Source</property>
     <property name="authors">Raphael Sander
 Cainã D'Ajuda</property>
-    <property name="logo_icon_name">system-software-update</property>
+    <property name="logo">logo.png</property>
     <property name="license_type">custom</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="aboutdialog-vbox1">
