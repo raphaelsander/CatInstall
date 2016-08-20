@@ -16,8 +16,6 @@ else:
 
 class App(Gtk.Window):
 
-	aplicativos = os.listdir(os.getcwd() + "/apps/")
-
 	def __init__(self):
 		self.builder = Gtk.Builder()
 		self.builder.add_from_file(os.getcwd() + "/ui/main.glade")
@@ -36,9 +34,17 @@ class App(Gtk.Window):
 		Gtk.main_quit()
 
 	def aplicativos(self, data=None):
+		aplicativos = os.listdir(os.getcwd() + "/apps/")
 		print "Exibindo janela de Aplicativos"
 		self.window.hide()
 		self.window = self.builder.get_object("window2")
+		for i in range(0, len(aplicativos)):
+			print i, aplicativos[i]
+
+			##Ainda em Construção
+			self.button = Gtk.Button()
+			self.grid5.attach(self.button, 0, i, 1, 1)
+
 		self.window.show()
 
 	def home(self, data=None):
