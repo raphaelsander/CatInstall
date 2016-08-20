@@ -15,6 +15,9 @@ else:
     os.mkdir(os.getcwd() + "/.cacheappinstall/")
 
 class App(Gtk.Window):
+
+	aplicativos = os.listdir(os.getcwd() + "/apps/")
+
 	def __init__(self):
 		self.builder = Gtk.Builder()
 		self.builder.add_from_file(os.getcwd() + "/ui/main.glade")
@@ -23,14 +26,35 @@ class App(Gtk.Window):
 		self.aboutdialog = self.builder.get_object("aboutdialog1")
 		self.window.show()
 		
-	def on_about_activate(self, data=None):
+	def about(self, data=None):
 		print "Exibindo Sobre"
 		self.response = self.aboutdialog.run()
 		self.aboutdialog.hide()
-		
-	def on_window1_destroy(self, data=None):
+
+	def window1_destroy(self, data=None):
 		print "Fechando"
 		Gtk.main_quit()
+
+	def aplicativos(self, data=None):
+		print "Exibindo janela de Aplicativos"
+		self.window.hide()
+		self.window = self.builder.get_object("window2")
+		self.window.show()
+
+	def home(self, data=None):
+		print "Voltando ao Início"
+		self.window.hide()
+		self.window = self.builder.get_object("window1")
+		self.window.show()
+
+	#def install_app(self, app):
+		#scripts_path = os.getcwd() + "/apps/"
+		#os.system("gnome-terminal -x bash -c %s%s && exit; exec bash" % (scripts_path, app))
+
+	#def setup(self):
+		#for i in self.applications:
+			#button_name = "%s_btn" % i
+			#getattr(self.main, button_name).connect('clicked', self._on_app_btn__clicked, i)
 
 if __name__ == '__main__':
     app = App()
