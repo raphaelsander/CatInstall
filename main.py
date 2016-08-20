@@ -17,7 +17,7 @@ else:
 class App(Gtk.Window):
 	def __init__(self):
 		self.builder = Gtk.Builder()
-		self.builder.add_from_file(os.getcwd() + "/main.glade")
+		self.builder.add_from_file(os.getcwd() + "/ui/main.glade")
 		self.builder.connect_signals(self)
 		self.window = self.builder.get_object("window1")
 		self.aboutdialog = self.builder.get_object("aboutdialog1")
