@@ -11,7 +11,7 @@
     <property name="destroy_with_parent">True</property>
     <property name="icon_name">preferences-desktop</property>
     <property name="gravity">center</property>
-    <signal name="destroy" handler="on_window1_destroy" swapped="no"/>
+    <signal name="destroy" handler="window1_destroy" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
         <property name="visible">True</property>
@@ -68,6 +68,7 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
+                <signal name="clicked" handler="aplicativos" object="window2" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -140,7 +141,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <signal name="activate" handler="on_about_activate" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -178,7 +178,7 @@
                 <property name="receives_default">True</property>
                 <property name="use_stock">True</property>
                 <property name="always_show_image">True</property>
-                <signal name="clicked" handler="on_about_activate" object="aboutdialog1" swapped="no"/>
+                <signal name="clicked" handler="about" object="aboutdialog1" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
@@ -255,40 +255,38 @@ Cainã D'Ajuda</property>
   </object>
   <object class="GtkWindow" id="window2">
     <property name="can_focus">False</property>
+    <property name="title" translatable="yes">AppInstall 1.0 Beta</property>
+    <property name="resizable">False</property>
+    <property name="window_position">center</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="gravity">center</property>
     <child>
       <object class="GtkBox" id="box2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="halign">center</property>
         <property name="margin_left">10</property>
-        <property name="margin_right">11</property>
+        <property name="margin_right">10</property>
         <property name="margin_top">10</property>
         <property name="margin_bottom">10</property>
         <property name="orientation">vertical</property>
+        <property name="spacing">5</property>
         <child>
           <object class="GtkGrid" id="grid4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_top">10</property>
             <property name="margin_bottom">10</property>
+            <property name="column_spacing">25</property>
             <child>
               <object class="GtkImage" id="image2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="stock">gtk-missing-image</property>
+                <property name="opacity">0.96078431372549022</property>
+                <property name="pixbuf">logo.png</property>
               </object>
               <packing>
                 <property name="left_attach">0</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkLabel" id="label2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="label" translatable="yes">label</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
                 <property name="top_attach">0</property>
               </packing>
             </child>
@@ -300,13 +298,104 @@ Cainã D'Ajuda</property>
           </packing>
         </child>
         <child>
-          <object class="GtkSearchEntry" id="searchentry1">
+          <object class="GtkGrid" id="grid5">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="margin_bottom">10</property>
-            <property name="primary_icon_name">edit-find-symbolic</property>
-            <property name="primary_icon_activatable">False</property>
-            <property name="primary_icon_sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="halign">center</property>
+            <property name="row_spacing">10</property>
+            <property name="column_spacing">10</property>
+            <property name="row_homogeneous">True</property>
+            <property name="column_homogeneous">True</property>
+            <child>
+              <object class="GtkButton" id="1">
+                <property name="label" translatable="yes">Java</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="2">
+                <property name="label" translatable="yes">Temas</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="3">
+                <property name="label" translatable="yes">Ícones</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">0</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="4">
+                <property name="label" translatable="yes">Fontes</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="5">
+                <property name="label" translatable="yes">Cursor</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">1</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="6">
+                <property name="label" translatable="yes">Conky</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">2</property>
+                <property name="top_attach">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkButton" id="7">
+                <property name="label" translatable="yes">Outros</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="left_attach">0</property>
+                <property name="top_attach">2</property>
+              </packing>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
+            <child>
+              <placeholder/>
+            </child>
           </object>
           <packing>
             <property name="expand">False</property>
@@ -315,24 +404,17 @@ Cainã D'Ajuda</property>
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="grid5">
+          <object class="GtkGrid" id="grid6">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <child>
-              <object class="GtkScrollbar" id="scrollbar1">
+              <object class="GtkButton" id="home">
+                <property name="label">gtk-home</property>
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
-                <property name="orientation">vertical</property>
-              </object>
-              <packing>
-                <property name="left_attach">1</property>
-                <property name="top_attach">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkListBox" id="listbox2">
-                <property name="visible">True</property>
-                <property name="can_focus">False</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+                <property name="use_stock">True</property>
+                <signal name="clicked" handler="home" object="window1" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">0</property>
