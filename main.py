@@ -34,18 +34,14 @@ class App(Gtk.Window):
 		Gtk.main_quit()
 
 	def aplicativos(self, data=None):
-		aplicativos = os.listdir(os.getcwd() + "/apps/")
+		apps = os.listdir(os.getcwd() + "/apps/")
 		print "Exibindo janela de Aplicativos"
 		self.window.hide()
 		self.window = self.builder.get_object("window2")
-		for i in range(0, len(aplicativos)):
-			print i, aplicativos[i]
-
-			##Ainda em Construção
-			self.button = Gtk.Button()
-			self.grid5.attach(self.button, 0, i, 1, 1)
-
-		self.window.show()
+		for i in range(0, len(apps)):
+			print i, apps[i]
+			Gtk.Button(label=apps[i])
+		self.window.show_all()
 
 	def home(self, data=None):
 		print "Voltando ao Início"
