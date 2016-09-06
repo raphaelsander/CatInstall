@@ -25,26 +25,26 @@ class App(Gtk.Window):
 		self.window.show()
 		
 	def about(self, data=None):
-		print "Exibindo Sobre"
+		print ("Exibindo Sobre")
 		self.response = self.aboutdialog.run()
 		self.aboutdialog.hide()
 
 	def window1_destroy(self, data=None):
-		print "Fechando"
+		print ("Fechando")
 		Gtk.main_quit()
 
 	def aplicativos(self, data=None):
 		apps = os.listdir(os.getcwd() + "/apps/")
-		print "Exibindo janela de Aplicativos"
+		print ("Exibindo janela de Aplicativos")
 		self.window.hide()
 		self.window = self.builder.get_object("window2")
 		for i in range(0, len(apps)):
-			print i, apps[i]
+			print (i, apps[i])
 			Gtk.Button(label=apps[i])
 		self.window.show_all()
 
 	def home(self, data=None):
-		print "Voltando ao Início"
+		print ("Voltando ao Início")
 		self.window.hide()
 		self.window = self.builder.get_object("window1")
 		self.window.show()
