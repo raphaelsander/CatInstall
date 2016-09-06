@@ -1,6 +1,0 @@
-##BlackCat
-#Unity Launcher Folders - rev.01
-
-sudo add-apt-repository ppa:asukhovatkin/unity-launcher-folders
-sudo apt-get update
-sudo apt-get install unity-launcher-folders
