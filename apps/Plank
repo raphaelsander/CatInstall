@@ -1,7 +1,6 @@
 #!/bin/bash
 
-##BlackCat
-#Plank Rev. 01
+#BlackCat Rev. 01
 
 sudo add-apt-repository ppa:ricotz/docky
 sudo apt-get update
