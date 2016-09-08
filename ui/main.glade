@@ -307,7 +307,7 @@ Cainã D'Ajuda</property>
             <property name="row_spacing">5</property>
             <property name="column_spacing">5</property>
             <child>
-              <object class="GtkButton" id="button_1">
+              <object class="GtkButton" id="0">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -322,7 +322,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_2">
+              <object class="GtkButton" id="1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -336,7 +336,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_3">
+              <object class="GtkButton" id="2">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -350,7 +350,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_4">
+              <object class="GtkButton" id="3">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -364,7 +364,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_5">
+              <object class="GtkButton" id="4">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -378,7 +378,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_6">
+              <object class="GtkButton" id="5">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -392,7 +392,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_7">
+              <object class="GtkButton" id="6">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -406,7 +406,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_8">
+              <object class="GtkButton" id="7">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -420,7 +420,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button_9">
+              <object class="GtkButton" id="8">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
