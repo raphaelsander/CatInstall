@@ -38,10 +38,10 @@ class App(Gtk.Window):
 		print ("Exibindo janela de Aplicativos")
 		self.window.hide()
 		self.window = self.builder.get_object("window2")
-		for i in range(0, len(apps)):
+		#for i in range(0, len(apps)):
+		for i in range(0, 9):
 			print (i, apps[i])
-			self.button_1 = self.builder.get_object("button_1")
-			self.button_1.set_label("%s" %apps[i])
+			self.builder.get_object("%s" %i).set_label("%s" %apps[i])
 		self.window.show_all()
 
 	def home(self, data=None):
