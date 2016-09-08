@@ -40,7 +40,8 @@ class App(Gtk.Window):
 		self.window = self.builder.get_object("window2")
 		for i in range(0, len(apps)):
 			print (i, apps[i])
-			Gtk.Button(label=apps[i])
+			self.button_1 = self.builder.get_object("button_1")
+			self.button_1.set_label("%s" %apps[i])
 		self.window.show_all()
 
 	def home(self, data=None):
