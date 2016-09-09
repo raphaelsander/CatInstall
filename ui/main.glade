@@ -312,6 +312,7 @@ Cainã D'Ajuda</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="always_show_image">True</property>
+                <signal name="clicked" handler="install_app" swapped="no"/>
                 <child>
                   <placeholder/>
                 </child>
