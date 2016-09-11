@@ -3,14 +3,12 @@
 <interface>
   <requires lib="gtk+" version="3.12"/>
   <!-- interface-license-type all_permissive -->
-  <object class="GtkAction" id="action1"/>
   <object class="GtkWindow" id="window1">
     <property name="can_focus">False</property>
     <property name="title" translatable="yes">AppInstall 1.0 Beta</property>
     <property name="resizable">False</property>
     <property name="window_position">center</property>
     <property name="destroy_with_parent">True</property>
-    <property name="icon_name">preferences-desktop</property>
     <property name="gravity">center</property>
     <signal name="destroy" handler="window1_destroy" swapped="no"/>
     <child>
@@ -227,11 +225,10 @@
     <property name="copyright" translatable="yes">Copyright © 2016
 BlackCat Development Team</property>
     <property name="website">http://blackcat8080.xyz/projetos/appinstall</property>
-    <property name="license" translatable="yes">Open Source</property>
     <property name="authors">Raphael Sander
 Cainã D'Ajuda</property>
     <property name="logo">logo.png</property>
-    <property name="license_type">custom</property>
+    <property name="license_type">gpl-3-0</property>
     <child internal-child="vbox">
       <object class="GtkBox" id="aboutdialog-vbox1">
         <property name="can_focus">False</property>
@@ -278,6 +275,8 @@ Cainã D'Ajuda</property>
           <object class="GtkGrid" id="grid4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_left">5</property>
+            <property name="margin_right">5</property>
             <property name="margin_top">10</property>
             <property name="margin_bottom">10</property>
             <property name="column_spacing">25</property>
@@ -304,6 +303,8 @@ Cainã D'Ajuda</property>
           <object class="GtkGrid" id="grid5">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="margin_left">5</property>
+            <property name="margin_right">5</property>
             <property name="row_spacing">5</property>
             <property name="column_spacing">5</property>
             <child>
@@ -312,7 +313,6 @@ Cainã D'Ajuda</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
                 <property name="always_show_image">True</property>
-                <signal name="clicked" handler="install_app" swapped="no"/>
                 <child>
                   <placeholder/>
                 </child>
@@ -445,8 +445,8 @@ Cainã D'Ajuda</property>
           <object class="GtkGrid" id="grid6">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">10</property>
-            <property name="margin_right">10</property>
+            <property name="margin_left">5</property>
+            <property name="margin_right">5</property>
             <property name="margin_top">10</property>
             <property name="margin_bottom">10</property>
             <child>
@@ -465,17 +465,18 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button1">
+              <object class="GtkButton" id="back">
                 <property name="label">gtk-go-back</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="halign">center</property>
+                <property name="halign">end</property>
                 <property name="valign">center</property>
-                <property name="margin_left">80</property>
                 <property name="margin_right">5</property>
+                <property name="hexpand">True</property>
                 <property name="use_stock">True</property>
                 <property name="always_show_image">True</property>
+                <signal name="clicked" handler="back" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>
@@ -483,7 +484,7 @@ Cainã D'Ajuda</property>
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="button2">
+              <object class="GtkButton" id="next">
                 <property name="label">gtk-go-forward</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -493,6 +494,7 @@ Cainã D'Ajuda</property>
                 <property name="resize_mode">immediate</property>
                 <property name="use_stock">True</property>
                 <property name="always_show_image">True</property>
+                <signal name="clicked" handler="next" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">2</property>
