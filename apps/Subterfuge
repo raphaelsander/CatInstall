@@ -1,12 +1,16 @@
 #!/bin/bash
 
+#BlackCat Rev. 01
+
 echo "### INSTALAÇÃO SUBTERFUGE ###"
 echo " "
-sudo cd ~/.cacheappinstall/ && wget -c https://subterfuge.googlecode.com/files/subterfuge_1.0-1_all.deb
+
+sudo cd /.cacheappinstall/ && wget -c https://subterfuge.googlecode.com/files/subterfuge_1.0-1_all.deb
 sudo apt-get install python-pip -y
 sudo pip install Django==1.3
-sudo dpkg -i ~/cacheappinstall/subterfuge_1.0-1_all.deb
+sudo dpkg -i /.cacheappinstall/subterfuge_1.0-1_all.deb
 sudo apt-get -f install
+
 echo " "
 echo "Processo Concluído!!! Tecle ENTER"
 read

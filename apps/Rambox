@@ -1,6 +1,17 @@
 #!/bin/bash
-## Rambox
-cd ~/.cacheappinstall/ && get https://getrambox.herokuapp.com/download/linux_64
-cd opt/ && unzip Rambox-linux-x64.zip
-cd Rambox-linux-x64
-chmod +x Rambox
+
+#BlackCat Rev. 01
+
+echo "### INSTALAÇÃO RAMBOX ###"
+echo " "
+
+echo "Tecle para iniciar o download e instalação."
+read
+cd .cacheappinstall && wget https://getrambox.herokuapp.com/download/linux_64
+unzip Rambox-linux-x64.zip
+sudo mv /Rambox-linux-x64 /opt
+chmod +x /opt/Rambox-linux-x64/Rambox
+
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read
