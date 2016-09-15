@@ -8,9 +8,7 @@ echo " "
 echo "Tecle para iniciar o download e instalação."
 read
 cd .cacheappinstall && wget https://getrambox.herokuapp.com/download/linux_64
-unzip Rambox-linux-x64.zip
-sudo mv /Rambox-linux-x64 /opt
-chmod +x /opt/Rambox-linux-x64/Rambox
+cd .cacheappinstall && sudo dpkg -i linux_64
 
 echo " "
 echo "Processo Concluído!!! Tecle ENTER"
