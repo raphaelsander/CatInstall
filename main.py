@@ -46,10 +46,10 @@ class App(Gtk.Window):
 				self.builder.get_object("%s" %i).connect('clicked', self.install_app, "%s" %apps[i])
 			self.window2.show_all()
 
-	def next(self):
+	def next(self, data=None):
 		print ("Próxima página")
 
-	def back(self):
+	def back(self, data=None):
 		print("Página anterior")
 
 	def home(self, data=None):
