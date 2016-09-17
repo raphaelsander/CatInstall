@@ -13,7 +13,7 @@ if os.path.exists(os.getcwd() + "/.cacheappinstall/") == True:
 else:
     os.mkdir(os.getcwd() + "/.cacheappinstall/")
 
-class App(Gtk.Window):
+class App():
 
 	def __init__(self):
 		self.builder = Gtk.Builder()
@@ -21,8 +21,12 @@ class App(Gtk.Window):
 		self.builder.connect_signals(self)
 		self.window1 = self.builder.get_object("window1")
 		self.aboutdialog = self.builder.get_object("aboutdialog1")
+
+		self.builder.get_object("icons").connect('clicked', self.aplicativos, "icons")
+		self.builder.get_object("apps").connect('clicked', self.aplicativos, "apps")
+
 		self.window1.show()
-		
+
 	def about(self, data=None):
 		print ("Exibindo Sobre")
 		self.response = self.aboutdialog.run()
@@ -32,8 +36,8 @@ class App(Gtk.Window):
 		print ("Fechando")
 		Gtk.main_quit()
 
-	def aplicativos(self, data=None):
-		apps = os.listdir(os.getcwd() + "/apps/")
+	def aplicativos(self, null, categoria):
+		apps = os.listdir(os.getcwd() + "/%s/" %categoria)
 		print ("Exibindo janela de Aplicativos")
 		self.window1.hide()
 
@@ -43,7 +47,7 @@ class App(Gtk.Window):
 			self.window2 = self.builder.get_object("window2")
 			for i in range(0, 9):
 				self.builder.get_object("%s" %i).set_label("%s" %apps[i])
-				self.builder.get_object("%s" %i).connect('clicked', self.install_app, "%s" %apps[i])
+				self.builder.get_object("%s" %i).connect('clicked', self.install_app, categoria,"%s" %apps[i])
 			self.window2.show_all()
 
 	def next(self, data=None):
@@ -58,9 +62,10 @@ class App(Gtk.Window):
 		self.window1 = self.builder.get_object("window1")
 		self.window1.show()
 
-	def install_app(self, null, name_app):
-		scripts_path = os.getcwd() + "/apps/"
+	def install_app(self, null, categoria, name_app):
+		scripts_path = os.getcwd() + "/%s/" %categoria
 		print ("Executando Script", (scripts_path + name_app))
+		os.system("chmod +x '%s%s'" %(scripts_path, name_app))
 		os.system("gnome-terminal -x bash -c '%s%s' && exit; exec bash" %(scripts_path, name_app))
 
 if __name__ == '__main__':
