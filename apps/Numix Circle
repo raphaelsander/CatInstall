@@ -1,9 +1,14 @@
 #!/bin/bash
 
-#BlackCat Rev. 01
+echo "BlackCat Rev. 01"
+echo " "
 
 echo "### INSTALAÇÃO NUMIX ICON THEME CIRCLE ###"
 echo " "
+echo "Testado nas seguintes distribuições:"
+echo "- Ubuntu 16.04"
+echo "- Ubuntu 15.10"
+echo "- Ubuntu 14.04"
 
 sudo add-apt-repository ppa:numix/ppa
 sudo apt-get update
