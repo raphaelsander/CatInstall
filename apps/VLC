@@ -1,8 +1,12 @@
 #!/bin/bash
 
-#BlackCat Rev. 01
+echo "BlackCat Rev. 01"
+echo " "
 
-echo "### INSTALAÇãO VLC ###"
+echo "### INSTALAÇÃO VLC ###"
+echo " "
+echo "Testado nas seguintes distribuições:"
+echo "- Ubuntu 16.04"
 echo " "
 
 sudo add-apt-repository ppa:videolan/stable-daily
