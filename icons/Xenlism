@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "BlackCat Rev. 01"
+echo " "
+echo "### INSTALAÇÃO XENLISM ICON THEME ###"
+echo " "
+
+echo "deb http://repo-xen.rhcloud.com deb/" | sudo tee -a /etc/apt/sources.list
+sudo apt-get update
+sudo apt-get install xenlism-wildfire-icon-theme
+
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read
