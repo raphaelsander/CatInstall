@@ -9,11 +9,12 @@ echo "Testado nas seguintes distribuições:"
 echo "- Ubuntu 16.04"
 echo "- Ubuntu 15.10"
 echo "- Ubuntu 14.04"
+echo " "
 
 sudo add-apt-repository ppa:numix/ppa
 sudo apt-get update
 sudo apt-get install numix-icon-theme-circle -y
-echo " "
 
+echo " "
 echo "Processo Concluído!!! Tecle ENTER"
 read
