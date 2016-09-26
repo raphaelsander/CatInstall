@@ -25,8 +25,7 @@ class App():
 		home = ["apps", "themes", "icons", "fonts", "cursor", "conky", "other"]
 
 		for y in home:
-			print(y)
-			self.builder.get_object("%s" % y).connect('clicked', self.aplicativos, "%s" % y)
+			self.builder.get_object("%s" %y).connect('clicked', self.aplicativos, "%s" %y)
 
 		self.window1.show()
 
@@ -39,9 +38,9 @@ class App():
 		print ("Fechando")
 		Gtk.main_quit()
 
-	def aplicativos(self, null, categoria):
+	def aplicativos(self, null, categoria, *args):
 		apps = os.listdir(os.getcwd() + "/%s/" %categoria)
-		print ("Exibindo janela de Aplicativos")
+		print ("Exibindo janela de %s" %categoria)
 		self.window1.hide()
 
 		try:
