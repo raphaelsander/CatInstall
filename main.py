@@ -22,8 +22,11 @@ class App():
 		self.window1 = self.builder.get_object("window1")
 		self.aboutdialog = self.builder.get_object("aboutdialog1")
 
-		self.builder.get_object("icons").connect('clicked', self.aplicativos, "icons")
-		self.builder.get_object("apps").connect('clicked', self.aplicativos, "apps")
+		home = ["apps", "themes", "icons", "fonts", "cursor", "conky", "other"]
+
+		for y in home:
+			print(y)
+			self.builder.get_object("%s" % y).connect('clicked', self.aplicativos, "%s" % y)
 
 		self.window1.show()
 
