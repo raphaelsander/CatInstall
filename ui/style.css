@@ -1,11 +1,14 @@
-#window1 {
-    background-color: black;
-    border-radius: 10px;
-    outline:none;
-    }
-
 #window2 {
     background-color: black;
-    border-radius: 10px;
-    outline:none;
-    }
+}
+
+#window1 {
+    background-color: black;
+}
+
+#aboutdialog1 {
+    background-color: black;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+}
