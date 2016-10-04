@@ -27,9 +27,10 @@ class App():
 		self.window2.set_name('window2')
 		self.aboutdialog.set_name('aboutdialog1')
 
-		home = ["apps", "themes", "icons", "fonts", "cursor", "conky", "other"]
+		global page
+		page = 1
 
-		self.x = True
+		home = ["apps", "themes", "icons", "fonts", "cursor", "conky", "other"]
 
 		for y in home:
 			self.builder.get_object("%s" %y).connect('clicked', self.aplicativos, "%s" %y)
@@ -57,33 +58,43 @@ class App():
 		print ("Exibindo janela de %s" %categoria)
 		self.window1.hide()
 
-		self.btn = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
-		self.btt = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
+		self.btn = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+		self.btt = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 		for i in range(0, 9):
+			global page
+			v = i * page
 			self.window2 = self.builder.get_object("window2")
 			self.btt[i] = self.builder.get_object("%s" %i)
-			self.btt[i].set_label("%s" % apps[i])
-			self.btn[i] = self.btt[i].connect('clicked', self.install_app, categoria, "%s" %apps[i])
-			print(self.btn[i], self.btt[i])
+			try:
+				self.btt[i].set_label("%s" % apps[v])
+				self.btn[i] = self.btt[i].connect('clicked', self.install_app, categoria, "%s" %apps[v])
+				print(self.btn[i], self.btt[i])
+			except:
+				pass
 
-		try:
-			self.builder.get_object("home").disconnect(yuuu)
-		except:
-			yuuu = self.builder.get_object("home").connect('clicked', self.home, self.btn, self.btt)
+		home = self.builder.get_object("home")
+		yuuu = home.connect('clicked', self.home, self.btn, self.btt)
 		self.window2.show_all()
 
 	def next(self, data=None):
-		print ("Próxima página")
+		global page
+		page = page + 1
+		print(page)
+		print ("Página %s" %page)
+		self.window2.show_all()
 
 	def back(self, data=None):
-		print("Página anterior")
+		global page
+		if page != 1:
+			page = page - 1
+		print("Página %s" %page)
 
-	def home(self, button, arg, btt, *args):
+	def home(self, button, arg, btt):
 		print ("Voltando ao Início")
 		print(arg)
 		print(btt)
-		for i in range(0, 8):
+		for i in range(0, 9):
 			self.btt[i].disconnect(arg[i])
 		self.window2.hide()
 		self.window1.show()
