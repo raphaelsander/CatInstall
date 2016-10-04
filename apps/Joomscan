@@ -1,0 +1,7 @@
+baixar
+extrair
+sudo apt-get install libswitch-perl
+apt-get install cpanminus
+cpanm WWW::Mechanize
+cpanm WWW::Mechanize::TreeBuilder
+
