@@ -53,7 +53,7 @@ class App():
         print("Fechando")
         Gtk.main_quit()
 
-    def aplicativos(self, button, categoria):
+    def aplicativos(self, null, categoria):
         apps = os.listdir(os.getcwd() + "/%s/" % categoria)
         print("Exibindo janela de %s" % categoria)
         self.window1.hide()
@@ -75,6 +75,7 @@ class App():
             vbox.pack_start(label, True, True, 0)
 
             button = Gtk.Button("Execute")
+            button.connect('clicked', self.install_app, categoria, '%s' %i)
             hbox.pack_start(button, False, True, 0)
 
             listbox.add(row)
@@ -92,6 +93,7 @@ class App():
 
     def home(self, button):
         print("Voltando ao Início")
+
         self.window2.hide()
         self.window1.show()
 
