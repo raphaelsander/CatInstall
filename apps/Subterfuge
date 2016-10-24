@@ -1,8 +1,12 @@
 #!/bin/bash
 
 #BlackCat Rev. 01
+echo " "
 
 echo "### INSTALAÇÃO SUBTERFUGE ###"
+echo " "
+echo "Testado nas seguintes distribuições:"
+echo "- Ubuntu 16.04"
 echo " "
 
 sudo cd /.cacheappinstall/ && wget -c https://subterfuge.googlecode.com/files/subterfuge_1.0-1_all.deb
