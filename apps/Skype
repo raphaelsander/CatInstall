@@ -1,11 +1,19 @@
 #!/bin/bash
 
+echo "BlackCat Rev. 01"
+echo " "
+
 echo "### INSTALAÇÃO SKYPE ###"
 echo " "
+echo "Testado nas seguintes distribuições:"
+echo "- Ubuntu 16.04"
+echo " "
+
 sudo wget http://download.skype.com/linux/skype-ubuntu-precise_4.3.0.37-1_i386.deb
 sudo dpkg -i skype-ubuntu-precise_4.3.0.37-1_i386.deb
 sudo rm skype-ubuntu-precise_4.3.0.37-1_i386.deb
 sudo apt-get -f install
+
 echo " "
 echo "Processo Concluído!!! Tecle ENTER"
 read
