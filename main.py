@@ -21,18 +21,18 @@ class App():
         self.builder = Gtk.Builder()
         self.builder.add_from_file(os.getcwd() + "/ui/main.glade")
         self.builder.connect_signals(self)
-        self.window1 = self.builder.get_object("window1")
-        self.window2 = self.builder.get_object("window2")
+        self.window_home = self.builder.get_object("window_home")
+        #self.window2 = self.builder.get_object("window2")
         self.aboutdialog = self.builder.get_object("aboutdialog1")
 
-        self.window1.set_name('window1')
-        self.window2.set_name('window2')
+        self.window_home.set_name('window_home')
+        #self.window2.set_name('window2')
         self.aboutdialog.set_name('aboutdialog1')
 
-        home = ["apps", "themes", "icons", "fonts", "cursor", "conky", "other"]
+        home = ["app", "theme", "icon", "font", "cursor", "conky", "other"]
 
-        for y in home:
-            self.builder.get_object("%s" % y).connect('clicked', self.aplicativos, '%s' %y)
+        for category in home:
+            self.builder.get_object("button_%s" %category).connect('clicked', self.aplicativos, category)
 
         style_provider = Gtk.CssProvider()
 
@@ -42,31 +42,26 @@ class App():
         Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), style_provider,
                                                  Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
 
-        self.window1.show()
+        self.window_home.show()
 
     def about(self, data=None):
-        print("Exibindo Sobre")
         self.response = self.aboutdialog.run()
         self.aboutdialog.hide()
 
-    def window1_destroy(self, data=None):
-        print("Fechando")
+    def window_home_destroy(self, data=None):
         Gtk.main_quit()
 
-    def aplicativos(self, null, categoria):
-        apps = os.listdir(os.getcwd() + "/%s/" % categoria)
-        print("Exibindo janela de %s" % categoria)
-        self.window1.hide()
-        self.window2 = self.builder.get_object("window2")
+    def aplicativos(self, null, category):
+        apps = os.listdir(os.getcwd() + "/scripts/%s/" %category)
+        self.window_home.hide()
 
-        listbox = Gtk.ListBox()
-        listbox.set_selection_mode(Gtk.SelectionMode.NONE)
+        self.window2 = self.builder.get_object("window_%s" %category)
+        listbox = self.builder.get_object("listbox_%s" %category)
 
         for i in apps:
-            print(i)
 
             row = Gtk.ListBoxRow()
-            hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=50)
+            hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=80)
             row.add(hbox)
             vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
             hbox.pack_start(vbox, True, True, 0)
@@ -75,33 +70,21 @@ class App():
             vbox.pack_start(label, True, True, 0)
 
             button = Gtk.Button("Execute")
-            button.connect('clicked', self.install_app, categoria, '%s' %i)
+            button.connect('clicked', self.install_app, category, '%s' %i)
             hbox.pack_start(button, False, True, 0)
 
             listbox.add(row)
 
-        scroll = self.builder.get_object("scrolledwindow1")
-        scroll.add_with_viewport(listbox)
-
         self.window2.show_all()
 
-    def next(self, data=None):
-        pass
-
-    def back(self, data=None):
-        pass
-
     def home(self, button):
-        print("Voltando ao Início")
-
         self.window2.hide()
-        self.window1.show()
+        self.window_home.show()
 
-    def install_app(self, null, categoria, name_app):
-        scripts_path = os.getcwd() + "/%s/" % categoria
-        print("Executando Script", (scripts_path + name_app))
-        os.system("chmod +x '%s%s'" % (scripts_path, name_app))
-        os.system("gnome-terminal -x bash -c '%s%s' && exit; exec bash" % (scripts_path, name_app))
+    def install_app(self, null, category, name_app):
+        scripts_path = os.getcwd() + "/scripts/%s/" %category
+        os.system("chmod +x '%s%s'" %(scripts_path, name_app))
+        os.system("gnome-terminal -x bash -c '%s%s' && exit; exec bash" %(scripts_path, name_app))
 
 
 if __name__ == '__main__':
