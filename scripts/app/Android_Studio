@@ -1,10 +1,14 @@
 #!/bin/bash
 
+#BlackCat Rev. 01
+
 echo "### INSTALAÇÃO ANDROID STUDIO ###"
 echo " "
+
 sudo add-apt-repository ppa:paolorotolo/android-studio
 sudo apt-get update
 sudo apt-get install android-studio -y
+
 echo " "
 echo "Processo Concluído!!! Tecle ENTER"
 read

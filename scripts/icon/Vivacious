@@ -8,3 +8,7 @@ echo " "
 sudo add-apt-repository ppa:upubuntu-com/icons
 sudo apt-get update
 sudo apt-get install vivacious-colors-icons
+
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read

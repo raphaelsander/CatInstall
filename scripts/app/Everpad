@@ -10,5 +10,5 @@ sudo apt-get update
 sudo apt-get install everpad -y
 
 echo " "
-echo "Processo Concluído!!!"
+echo "Processo Concluído!!! Tecle ENTER"
 read
