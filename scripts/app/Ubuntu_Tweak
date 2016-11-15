@@ -6,6 +6,7 @@ echo " "
 sudo add-apt-repository ppa:tualatrix/ppa
 sudo apt-get update
 sudo apt-get install ubuntu-tweak -y
+#https://launchpad.net/ubuntu-tweak/0.8.x/0.8.7/+download/ubuntu-tweak_0.8.7-1~trusty2_all.deb
 
 echo " "
 echo "Processo Concluído!!! Tecle ENTER"
