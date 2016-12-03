@@ -1,6 +1,7 @@
 #!/bin/bash
 
 #BlackCat Rev. 01
+#http://kicad-pcb.org/download/ubuntu/
 
 echo "### INSTALAÇÃO KICAD ###"
 echo " "
