@@ -1,8 +1,8 @@
-#window_home {
+#window {
     background-color: black;
 }
 
-#aboutdialog1 {
+#window_about {
     background-color: black;
     border-style: solid;
     border-color: red;
