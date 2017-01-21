@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#BlackCat Rev. 01
+
+echo "Script não finalizado."
+echo "Volte em breve ou ajude a fazer esse script."
+
+#baixar
+#extrair
+#sudo apt-get install libswitch-perl
+#apt-get install cpanminus
+#cpanm WWW::Mechanize
+#cpanm WWW::Mechanize::TreeBuilder
+
+read

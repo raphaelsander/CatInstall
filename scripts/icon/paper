@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "BlackCat Rev. 01"
+echo " "
+echo "### INSTALAÇÃO PAPER ICON THEME ###"
+echo " "
+
+sudo add-apt-repository ppa:snwh/pulp
+sudo apt-get update
+sudo apt-get install paper-icon-theme paper-gtk-theme
+
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#BlackCat Rev. 01
+
+echo "### INSTALAÇÃO RAMBOX ###"
+echo " "
+
+echo "Tecle para iniciar o download e instalação."
+read
+cd .cacheappinstall && wget https://getrambox.herokuapp.com/download/linux_64
+cd .cacheappinstall && sudo dpkg -i linux_64
+
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read

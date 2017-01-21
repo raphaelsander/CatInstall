@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#BlackCat Rev. 01
+
+echo "### INSTALAÇÃO ORACLE JAVA 1.8 ###"
+echo " "
+echo "1 - Java 6"
+echo "2 - Java 7"
+echo "3 - Java 8"
+echo " "
+echo "Qual versão de Java deseja instalar [1, 2, 3]:" && read op
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+
+if op == 1:
+    sudo apt-get install oracle-java6-installer -y
+if op == 2:
+    sudo apt-get install oracle-java7-installer -y
+if op == 3:
+    sudo apt-get install oracle-java8-installer -y
+
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read

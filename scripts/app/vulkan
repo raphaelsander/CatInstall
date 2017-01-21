@@ -1,0 +1,17 @@
+UPDATE 2016-03-18 -- vulkan loader has dropped it's demos (can't ship prebuilt shaders) and vkcube is broken, but the driver is now fixed and Willems demos work (some might crash though)
+
+-----
+
+This ppa contains bits and pieces needed to test Vulkan BUT ONLY FOR XENIAL (and maybe 14.04 in the future).
+
+:: sudo apt-add-repository ppa:canonical-x/vulkan
+:: sudo apt update
+:: sudo apt install vulkan-utils mesa-vulkan-drivers
+
+now run 'vulkaninfo'
+
+Shinier demos: https://github.com/SaschaWillems/Vulkan
+Clone the repository, then download the binary tarball and extract it in the bin/ directory of the repository, and run binaries from there (chmod first). Some are buggy with the current intel driver on this PPA.
+
+NOTE:
+The intel driver needs DRI3, so either enable it via xorg.conf, or remove intel_drv.so and use the modesetting driver instead (will still be hw accelerated).

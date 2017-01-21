@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "BlackCat Rev. 01"
+echo " "
+echo "### INSTALAÇÃO MOKA ICON THEME ###"
+echo " "
+
+sudo add-apt-repository ppa:moka/stable
+sudo apt-get update
+sudo apt-get install moka-icon-theme

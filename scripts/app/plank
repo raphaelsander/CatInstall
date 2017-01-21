@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#BlackCat Rev. 01
+
+echo "### INSTALAÇãO PLANK ###"
+echo " "
+
+sudo add-apt-repository ppa:ricotz/docky
+sudo apt-get update
+sudo apt-get install plank
+
+echo "plank --preferences para configurar"
+
+echo "Processo Concluído!!! Tecle ENTER"
+read

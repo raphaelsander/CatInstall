@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "### INSTALAÇÃO TELEGRAM ###"
+echo " "
+sudo wget https://updates.tdesktop.com/tlinux/tsetup.0.8.3.tar.xz
+sudo tar -xJf tsetup.0.8.3.tar.xz
+sudo rm -r tsetup.0.8.3.tar.xz
+sudo ./Telegram/Telegram
+echo " "
+echo "Processo Concluído!!! Tecle ENTER"
+read
