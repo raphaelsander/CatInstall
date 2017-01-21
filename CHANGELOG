@@ -1,0 +1,268 @@
+{
+	"app":{
+		"Android_Studio": {
+			"name": "Android Studio",
+			"patch": "/scripts/app/android_studio",
+			"md5": "ecf7f21b2715992690e617e21d43a30f",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Electrum Bitcoin Wallet": {
+			"name": "Electrum Bitcoin Wallet",
+			"patch": "/scripts/app/electrum_bitcoin_wallet",
+			"md5": "252e6ed775aa6ea570642f163bd7f4a1",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Everpad": {
+			"name": "Everpad",
+			"patch": "/scripts/app/everpad",
+			"md5": "6f3125d92157cd06e401565e839a0e7c",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Google Chrome": {
+			"name": "Google Chrome",
+			"patch": "/scripts/app/google_chrome",
+			"md5": "358de6b5983cd7902ddaae89d347c708",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Java": {
+			"name": "Java",
+			"patch": "/scripts/app/java",
+			"md5": "b90b2b37438e4d7c242c0744bb8ec018",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Joomscan": {
+			"name": "Joomscan",
+			"patch": "/scripts/app/joomscan",
+			"md5": "8566288f3621007cff8e13dce0fa81ec",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"KiCad": {
+			"name": "KiCad",
+			"patch": "/scripts/app/kicad",
+			"md5": "f9c75d7a93ba929fc3cb71abf53bb50c",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Peek": {
+			"name": "Peek",
+			"patch": "/scripts/app/peek",
+			"md5": "f9ebb78288b461c10b563fcc3f69f9e6",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Plank": {
+			"name": "Plank",
+			"patch": "/scripts/app/plank",
+			"md5": "0217cb8c945e1a5167844b719847d90f",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Popcorn-Time CE": {
+			"name": "Popcorn-Time CE",
+			"patch": "/scripts/app/popcorn-time",
+			"md5": "e12e1f63e5d29b2136f29766fbe1725e",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"qBittorrent": {
+			"name": "qBittorrent",
+			"patch": "/scripts/app/qbittorrent",
+			"md5": "cbd1c3f1a6b15f1ba5f9a286d7437d61",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Rambox": {
+			"name": "Rambox",
+			"patch": "/scripts/app/rambox",
+			"md5": "a4a96662858453c114d82b5c0cf92076",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Simple Screen Recorder": {
+			"name": "Simple Screen Recorder",
+			"patch": "/scripts/app/simple_screen_recorder",
+			"md5": "5d286437fb058710c3e0590c4a76a5e7",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Skype": {
+			"name": "Skype",
+			"patch": "/scripts/app/skype",
+			"md5": "1aa814c756da44e9ae037f651f631fb2",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Skype4 Pidgin": {
+			"name": "Skype4 Pidgin",
+			"patch": "/scripts/app/skype4_pidgin",
+			"md5": "7934fe8a2371079af4e7bf710090afb0",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Spotify": {
+			"name": "Spotify",
+			"patch": "/scripts/app/spotify",
+			"md5": "727e8b73b2475d47f775690932c43733",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Steam": {
+			"name": "Steam",
+			"patch": "/scripts/app/steam",
+			"md5": "e7fd0cf374930b528e70cdec529bb446",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Subterfuge": {
+			"name": "Subterfuge",
+			"patch": "/scripts/app/subterfuge",
+			"md5": "ae7506f2def7ad315b72795cc2330278",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Telegram": {
+			"name": "Telegram",
+			"patch": "/scripts/app/telegram",
+			"md5": "bc83d56e8c314c5f4f53d709e9b4000c",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Tor Browser": {
+			"name": "Tor Browser",
+			"patch": "/scripts/app/tor_browser",
+			"md5": "e5510246445a0ea1620b0cddbdd5c266",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Ubuntu Kernel Update Utility": {
+			"name": "Ubuntu Kernel Update Utility",
+			"patch": "/scripts/app/ubuntu_kernel_update_utility",
+			"md5": "f23cff06335bd6acc4104e27869a9150",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Ubuntu Tweak": {
+			"name": "Ubuntu Tweak",
+			"patch": "/scripts/app/ubuntu_tweak",
+			"md5": "144e9ba279adf34861dd1f34b3a4a925",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"VLC": {
+			"name": "VLC",
+			"patch": "/scripts/app/vlc",
+			"md5": "ac582621182d3c5a1121290b3e533041",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Vulkan": {
+			"name": "Vunkan",
+			"patch": "/scripts/app/vulkan",
+			"md5": "3d66db79bbb7c682db63a4ce926994db",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Whatsapp Pidgin": {
+			"name": "Whatsapp Pidgin",
+			"patch": "/scripts/app/whatsapp_pidgin",
+			"md5": "0a8180ef4b5940ae2fb9ffb50c087a29",
+			"describe": " ",
+			"version": "0.1"
+		}
+	},
+	"theme":{
+	},
+	"icon":{
+	    "Matrilineare": {
+			"name": "Matrilineare",
+			"patch": "/scripts/icon/matrilineare",
+			"md5": "d7d3048f0fdc82b46d1a53c9de0fd681",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Moka": {
+			"name": "Moka",
+			"patch": "/scripts/icon/moka",
+			"md5": "68826d4597c92ba87e0fa530a559cea9",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Numix Circle": {
+			"name": "Numix Circle",
+			"patch": "/scripts/icon/numix_circle",
+			"md5": "6f2b9f6017b5fa38feb130e10eb9f313",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Paper": {
+			"name": "Paper",
+			"patch": "/scripts/icon/paper",
+			"md5": "a773478bcea866e9edbc8656ff0dd68f",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Plateau": {
+			"name": "Plateau",
+			"patch": "/scripts/icon/plateau",
+			"md5": "562adc5e90fe1899ee10516f67a6d5f2",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Shadow": {
+			"name": "Shadow",
+			"patch": "/scripts/icon/shadow",
+			"md5": "9689e7150550ac04bcc505cc44353290",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Super Flat Remix": {
+			"name": "Super Flat Remix",
+			"patch": "/scripts/icon/super_flat_remix",
+			"md5": "d9a14eb44ab9390ed6a4066327d86800",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Uniform": {
+			"name": "Uniform",
+			"patch": "/scripts/icon/uniform",
+			"md5": "4fdff91638d2d613e945a8c95103c004",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Vibrancy": {
+			"name": "Vibrancy",
+			"patch": "/scripts/icon/vibrancy",
+			"md5": "b58b88343685912ad921a73a1757dff2",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Vivacious": {
+			"name": "Vivacious",
+			"patch": "/scripts/icon/vivacious",
+			"md5": "cfa0db0fc1ff677c129b213fd9a6f59c",
+			"describe": " ",
+			"version": "0.1"
+		},
+		"Xenlism": {
+			"name": "Xenlism",
+			"patch": "/scripts/icon/xenlism",
+			"md5": "0f8928f81355c85227f9520c5fd2e746",
+			"describe": " ",
+			"version": "0.1"
+		}
+	},
+	"font":{
+	},
+	"cursor":{
+	},
+	"conky":{
+	},
+	"other":{
+	}
+}
