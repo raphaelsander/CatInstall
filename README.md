@@ -5,9 +5,9 @@ http://blackcat8080.xyz/projetos/catinstall
 
 ##Download
 
-[catinstall_1.0_i386.deb](catinstall.blackcat8080.xyz/download/catinstall_1.0_i386.deb)
+[catinstall_1.0_i386.deb](http://catinstall.blackcat8080.xyz/download/catinstall_1.0_i386.deb)
 
-[catinstall_1.0_amd64.deb](catinstall.blackcat8080.xyz/download/catinstall_1.0_amd64.deb)
+[catinstall_1.0_amd64.deb](http://catinstall.blackcat8080.xyz/download/catinstall_1.0_amd64.deb)
 
 
 ##Dependencias
