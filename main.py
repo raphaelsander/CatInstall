@@ -4,39 +4,17 @@
 # By Team BlackCat
 
 import os
-import sys
-import threading
 import json
 import requests
 import urllib2
 import hashlib
-import gi
-gi.require_version("Gtk", "3.0")
-from gi.repository import Gtk, Gdk
 
-class App(threading.Thread):
+from PyQt4.QtGui import QApplication, QMainWindow
+from ui import Ui
+
+class App():
 
     def __init__(self):
-
-        # Construindo as janelas do app via XML Glade
-        self.builder = Gtk.Builder()
-        self.builder.add_from_file(os.getcwd() + "/ui/main.glade")
-        self.window = self.builder.get_object("window")
-        self.about_dialog = self.builder.get_object("about_dialog")
-        self.builder.connect_signals(self)
-
-        # Definindo estilo através do CSS
-        style_provider = Gtk.CssProvider()
-        css = "@import url('%s');" % (os.getcwd() + "/ui/style.css")
-        style_provider.load_from_data(bytes(css.encode()))
-        Gtk.StyleContext.add_provider_for_screen(Gdk.Screen.get_default(), style_provider,
-                                                 Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION)
-
-        # Exibindo interface gráfica
-        self.window.show_all()
-        threading.Thread.__init__(self)
-
-    def run(self):
 
         # Criando pasta de cache.
         if os.path.exists(os.path.expanduser("~/.cache/")):
@@ -98,19 +76,7 @@ class App(threading.Thread):
 
                 script.update(name, category, patch, md5)
 
-                script.add_row(name, category, patch, self.builder)
-
-        self.builder.get_object("spinner").hide()
-        self.builder.get_object("notebook").show()
-
-    # Função responsável pela janela Sobre
-    def on_button_about_clicked(self, data=None):
-        self.response = self.about_dialog.run()
-        self.about_dialog.hide()
-
-    # Função responsável por matar o Gtk após fechar o aplicativo
-    def window_destroy(self, data=None):
-        Gtk.main_quit()
+                script.add_row()
 
 class Script(object):
 
@@ -122,18 +88,19 @@ class Script(object):
 
         print self.name, self.category, self.patch, self.md5
 
-    def add_row(self, name, category, patch, builder):
-        listbox = builder.get_object("listbox_%s" % category)
-        row = Gtk.ListBoxRow()
-        hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=80)
-        row.add(hbox)
-        row.show()
-        vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        hbox.pack_start(vbox, True, True, 0)
-        label = Gtk.Label("%s" % name, xalign=0)
-        vbox.pack_start(label, True, True, 0)
+    def add_row(self):
+        pass
+        #listbox = builder.get_object("listbox_%s" % category)
+        #row = Gtk.ListBoxRow()
+        #hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=80)
+        #row.add(hbox)
+        #row.show()
+        #vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        #hbox.pack_start(vbox, True, True, 0)
+        #label = Gtk.Label("%s" % name, xalign=0)
+        #vbox.pack_start(label, True, True, 0)
 
-        button = Gtk.Button("Execute")
+        """button = Gtk.Button("Execute")
         button.connect('clicked', self.install, patch)
         hbox.pack_start(button, False, True, 0)
         listbox.add(row)
@@ -142,7 +109,7 @@ class Script(object):
         hbox.show()
         row.show()
         button.show()
-        label.show()
+        label.show()"""
 
     def update(self, name, category, patch, md5):
 
@@ -193,6 +160,10 @@ class Script(object):
             print("Não foi possível executar o script. Será que você possui o gnome-terminal? :/")
 
 if __name__ == '__main__':
-    app = App()
-    app.start()
-    Gtk.main()
+    app = QApplication([])
+    window = QMainWindow()
+    main_window = Ui()
+    main_window.setupUi(window)
+    window.show()
+    app.exec_()
+    main = App()
