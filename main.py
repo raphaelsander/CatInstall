@@ -3,10 +3,17 @@
 
 # By Team BlackCat
 
+# Dependencias:
+'''
+python3-pyqt4
+python3
+gnome-terminal
+'''
+
 import os
 import json
 import requests
-import urllib2
+from urllib.request import urlopen
 import hashlib
 
 from PyQt4.QtGui import QApplication, QMainWindow
@@ -36,17 +43,20 @@ class App():
                 print("Erro ao criar a pasta de dados do software. Verifique as permissões do software. :)")
 
         # Atualizando CHANGELOG
-        url = urllib2.urlopen("http://catinstall.blackcat8080.xyz/CHANGELOG")
+        try:
+            url = urlopen("http://catinstall.blackcat8080.xyz/CHANGELOG")
+        except:
+            print("Estamos sem internet para atualizar. :(")
         try:
             os.remove(os.path.expanduser("~/.local/share/CatInstall/CHANGELOG"))
         except OSError:
             print("Erro ao remover CHANGELOG, talvez o arquivo não exista. :)")
 
-        try:
-            with open(os.path.expanduser("~/.local/share/CatInstall/CHANGELOG"), 'wb') as output:
+        with open(os.path.expanduser("~/.local/share/CatInstall/CHANGELOG"), 'wb') as output:
+            try:
                 output.write(url.read())
-        except OSError:
-            print("Erro ao criar arquivo CHANGELOG, verifique as permissões do software. :)")
+            except:
+                print("Erro ao criar arquivo CHANGELOG, verifique as permissões do software ou se há internet. :)")
 
         # Abrindo arquivo de CHANGELOG que irá efetuar o controle de versão dos scripts
         try:
@@ -76,7 +86,7 @@ class App():
 
                 script.update(name, category, patch, md5)
 
-                script.add_row()
+                script.add_row(name, patch)
 
 class Script(object):
 
@@ -86,10 +96,12 @@ class Script(object):
         self.md5 = md5
         self.category = category
 
-        print self.name, self.category, self.patch, self.md5
+        print(self.name, self.category, self.patch, self.md5)
 
-    def add_row(self):
-        pass
+    def add_row(self, name, patch):
+        print(name, patch)
+
+
         #listbox = builder.get_object("listbox_%s" % category)
         #row = Gtk.ListBoxRow()
         #hbox = Gtk.Box(orientation=Gtk.Orientation.HORIZONTAL, spacing=80)
@@ -120,7 +132,7 @@ class Script(object):
             pass
         else:
             try:
-                url = urllib2.urlopen("http://catinstall.blackcat8080.xyz/scripts/%s/%s" % (category, patch.split("/")[-1]))
+                url = urlopen("http://catinstall.blackcat8080.xyz/scripts/%s/%s" % (category, patch.split("/")[-1]))
                 with open('%s' %patch, 'wb') as output:
                     output.write(url.read())
             except IOError:
@@ -143,13 +155,13 @@ class Script(object):
             except OSError:
                 print("Não foi possível excluir o script desatualizado. Talvez ele tenha sumido. :/")
             try:
-                url = urllib2.urlopen("http://catinstall.blackcat8080.xyz/scripts/%s/%s" % (category, patch.split("/")[-1]))
+                url = urlopen("http://catinstall.blackcat8080.xyz/scripts/%s/%s" % (category, patch.split("/")[-1]))
                 with open('%s' %patch, 'wb') as output:
                     output.write(url.read())
             except IOError:
                 print("Não foi possível baixar e escrever o script. Reinicie o aplicativo com internet!!! :)")
 
-    def install(self, button, patch):
+    def install(self, patch):
         try:
             os.system("chmod +x '%s'" %patch)
         except OSError:
@@ -160,10 +172,10 @@ class Script(object):
             print("Não foi possível executar o script. Será que você possui o gnome-terminal? :/")
 
 if __name__ == '__main__':
+    main = App()
     app = QApplication([])
     window = QMainWindow()
     main_window = Ui()
     main_window.setupUi(window)
     window.show()
     app.exec_()
-    main = App()
